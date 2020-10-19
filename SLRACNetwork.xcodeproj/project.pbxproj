@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		86EC58FB11511320493203AA /* libPods-SLRACNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 666A97CD85F3AFA1114C2F75 /* libPods-SLRACNetwork.a */; };
+		A1B6AB7B253D906500C2097D /* LMRequest+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B6AB7A253D906500C2097D /* LMRequest+RAC.m */; };
+		A1E6A0E62531654F00A880DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A0E52531654F00A880DC /* AppDelegate.m */; };
+		A1E6A0EC2531654F00A880DC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A0EB2531654F00A880DC /* ViewController.m */; };
+		A1E6A0F12531655000A880DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E6A0F02531655000A880DC /* Assets.xcassets */; };
+		A1E6A0F42531655000A880DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E6A0F22531655000A880DC /* LaunchScreen.storyboard */; };
+		A1E6A0F72531655000A880DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A0F62531655000A880DC /* main.m */; };
+		A1E6A12B2531AE4300A880DC /* UITableView+Lmps.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A1292531AE4300A880DC /* UITableView+Lmps.m */; };
+		A1E6A13F2531AE5D00A880DC /* LMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A12D2531AE5D00A880DC /* LMRequest.m */; };
+		A1E6A1402531AE5D00A880DC /* LMRequestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A1302531AE5D00A880DC /* LMRequestResult.m */; };
+		A1E6A1412531AE5D00A880DC /* LMRequestProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A1322531AE5D00A880DC /* LMRequestProxy.m */; };
+		A1E6A1422531AE5D00A880DC /* NSURLRequest+LMNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A1352531AE5D00A880DC /* NSURLRequest+LMNetwork.m */; };
+		A1E6A1442531AE5D00A880DC /* LMRequestGlobalParams.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A13D2531AE5D00A880DC /* LMRequestGlobalParams.m */; };
+		A1E6A1452531AE5D00A880DC /* LMListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A13E2531AE5D00A880DC /* LMListRequest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3FD74DEE721D8C805E2E69FB /* Pods-SLRACNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLRACNetwork.release.xcconfig"; path = "Target Support Files/Pods-SLRACNetwork/Pods-SLRACNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		666A97CD85F3AFA1114C2F75 /* libPods-SLRACNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SLRACNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B6AB79253D906500C2097D /* LMRequest+RAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LMRequest+RAC.h"; sourceTree = "<group>"; };
+		A1B6AB7A253D906500C2097D /* LMRequest+RAC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LMRequest+RAC.m"; sourceTree = "<group>"; };
+		A1E6A0E12531654F00A880DC /* SLRACNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLRACNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1E6A0E42531654F00A880DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A1E6A0E52531654F00A880DC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A1E6A0EA2531654F00A880DC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A1E6A0EB2531654F00A880DC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A1E6A0F02531655000A880DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1E6A0F32531655000A880DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1E6A0F52531655000A880DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1E6A0F62531655000A880DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A1E6A1292531AE4300A880DC /* UITableView+Lmps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Lmps.m"; sourceTree = "<group>"; };
+		A1E6A12A2531AE4300A880DC /* UITableView+Lmps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Lmps.h"; sourceTree = "<group>"; };
+		A1E6A12D2531AE5D00A880DC /* LMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMRequest.m; sourceTree = "<group>"; };
+		A1E6A12F2531AE5D00A880DC /* LMRequestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMRequestResult.h; sourceTree = "<group>"; };
+		A1E6A1302531AE5D00A880DC /* LMRequestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMRequestResult.m; sourceTree = "<group>"; };
+		A1E6A1322531AE5D00A880DC /* LMRequestProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMRequestProxy.m; sourceTree = "<group>"; };
+		A1E6A1332531AE5D00A880DC /* LMRequestProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMRequestProxy.h; sourceTree = "<group>"; };
+		A1E6A1352531AE5D00A880DC /* NSURLRequest+LMNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+LMNetwork.m"; sourceTree = "<group>"; };
+		A1E6A1372531AE5D00A880DC /* NSURLRequest+LMNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+LMNetwork.h"; sourceTree = "<group>"; };
+		A1E6A1392531AE5D00A880DC /* LMListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMListRequest.h; sourceTree = "<group>"; };
+		A1E6A13A2531AE5D00A880DC /* LMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMRequest.h; sourceTree = "<group>"; };
+		A1E6A13C2531AE5D00A880DC /* LMRequestGlobalParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMRequestGlobalParams.h; sourceTree = "<group>"; };
+		A1E6A13D2531AE5D00A880DC /* LMRequestGlobalParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMRequestGlobalParams.m; sourceTree = "<group>"; };
+		A1E6A13E2531AE5D00A880DC /* LMListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMListRequest.m; sourceTree = "<group>"; };
+		A1E6A2712531B95500A880DC /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F4A3C0FDEC300BC67E70EB18 /* Pods-SLRACNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLRACNetwork.debug.xcconfig"; path = "Target Support Files/Pods-SLRACNetwork/Pods-SLRACNetwork.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1E6A0DE2531654F00A880DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86EC58FB11511320493203AA /* libPods-SLRACNetwork.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3670838D883D44ADD9C85C94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				666A97CD85F3AFA1114C2F75 /* libPods-SLRACNetwork.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1E6A0D82531654F00A880DC = {
+			isa = PBXGroup;
+			children = (
+				A1E6A0E32531654F00A880DC /* SLRACNetwork */,
+				A1E6A0E22531654F00A880DC /* Products */,
+				A5D6753A371998B6276B60CA /* Pods */,
+				3670838D883D44ADD9C85C94 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A1E6A0E22531654F00A880DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1E6A0E12531654F00A880DC /* SLRACNetwork.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1E6A0E32531654F00A880DC /* SLRACNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				A1E6A2712531B95500A880DC /* PrefixHeader.pch */,
+				A1E6A0E42531654F00A880DC /* AppDelegate.h */,
+				A1E6A0E52531654F00A880DC /* AppDelegate.m */,
+				A1E6A0F02531655000A880DC /* Assets.xcassets */,
+				A1E6A0F52531655000A880DC /* Info.plist */,
+				A1E6A0F22531655000A880DC /* LaunchScreen.storyboard */,
+				A1E6A0F62531655000A880DC /* main.m */,
+				A1E6A12C2531AE5D00A880DC /* Network */,
+				A1E6A1282531AE4300A880DC /* UITableView */,
+				A1E6A0EA2531654F00A880DC /* ViewController.h */,
+				A1E6A0EB2531654F00A880DC /* ViewController.m */,
+			);
+			path = SLRACNetwork;
+			sourceTree = "<group>";
+		};
+		A1E6A1282531AE4300A880DC /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				A1E6A12A2531AE4300A880DC /* UITableView+Lmps.h */,
+				A1E6A1292531AE4300A880DC /* UITableView+Lmps.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		A1E6A12C2531AE5D00A880DC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A1E6A1342531AE5D00A880DC /* Category */,
+				A1E6A13B2531AE5D00A880DC /* Generator */,
+				A1E6A13A2531AE5D00A880DC /* LMRequest.h */,
+				A1E6A12D2531AE5D00A880DC /* LMRequest.m */,
+				A1E6A1392531AE5D00A880DC /* LMListRequest.h */,
+				A1E6A13E2531AE5D00A880DC /* LMListRequest.m */,
+				A1E6A1312531AE5D00A880DC /* Proxy */,
+				A1E6A12E2531AE5D00A880DC /* Response */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A1E6A12E2531AE5D00A880DC /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				A1E6A12F2531AE5D00A880DC /* LMRequestResult.h */,
+				A1E6A1302531AE5D00A880DC /* LMRequestResult.m */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		A1E6A1312531AE5D00A880DC /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				A1E6A1332531AE5D00A880DC /* LMRequestProxy.h */,
+				A1E6A1322531AE5D00A880DC /* LMRequestProxy.m */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
+		A1E6A1342531AE5D00A880DC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A1E6A1372531AE5D00A880DC /* NSURLRequest+LMNetwork.h */,
+				A1E6A1352531AE5D00A880DC /* NSURLRequest+LMNetwork.m */,
+				A1B6AB79253D906500C2097D /* LMRequest+RAC.h */,
+				A1B6AB7A253D906500C2097D /* LMRequest+RAC.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		A1E6A13B2531AE5D00A880DC /* Generator */ = {
+			isa = PBXGroup;
+			children = (
+				A1E6A13C2531AE5D00A880DC /* LMRequestGlobalParams.h */,
+				A1E6A13D2531AE5D00A880DC /* LMRequestGlobalParams.m */,
+			);
+			path = Generator;
+			sourceTree = "<group>";
+		};
+		A5D6753A371998B6276B60CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4A3C0FDEC300BC67E70EB18 /* Pods-SLRACNetwork.debug.xcconfig */,
+				3FD74DEE721D8C805E2E69FB /* Pods-SLRACNetwork.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1E6A0E02531654F00A880DC /* SLRACNetwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1E6A0FA2531655000A880DC /* Build configuration list for PBXNativeTarget "SLRACNetwork" */;
+			buildPhases = (
+				F9F669A7842B6A3C375E354C /* [CP] Check Pods Manifest.lock */,
+				A1E6A0DD2531654F00A880DC /* Sources */,
+				A1E6A0DE2531654F00A880DC /* Frameworks */,
+				A1E6A0DF2531654F00A880DC /* Resources */,
+				DE1F553E1EDB5D20B8EACA58 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SLRACNetwork;
+			productName = SLRACNetwork;
+			productReference = A1E6A0E12531654F00A880DC /* SLRACNetwork.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1E6A0D92531654F00A880DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = sl;
+				TargetAttributes = {
+					A1E6A0E02531654F00A880DC = {
+						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
+					};
+				};
+			};
+			buildConfigurationList = A1E6A0DC2531654F00A880DC /* Build configuration list for PBXProject "SLRACNetwork" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1E6A0D82531654F00A880DC;
+			productRefGroup = A1E6A0E22531654F00A880DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1E6A0E02531654F00A880DC /* SLRACNetwork */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1E6A0DF2531654F00A880DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E6A0F42531655000A880DC /* LaunchScreen.storyboard in Resources */,
+				A1E6A0F12531655000A880DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DE1F553E1EDB5D20B8EACA58 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SLRACNetwork/Pods-SLRACNetwork-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SLRACNetwork/Pods-SLRACNetwork-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SLRACNetwork/Pods-SLRACNetwork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9F669A7842B6A3C375E354C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SLRACNetwork-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1E6A0DD2531654F00A880DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E6A1412531AE5D00A880DC /* LMRequestProxy.m in Sources */,
+				A1E6A1402531AE5D00A880DC /* LMRequestResult.m in Sources */,
+				A1E6A0EC2531654F00A880DC /* ViewController.m in Sources */,
+				A1E6A0E62531654F00A880DC /* AppDelegate.m in Sources */,
+				A1E6A1422531AE5D00A880DC /* NSURLRequest+LMNetwork.m in Sources */,
+				A1E6A1452531AE5D00A880DC /* LMListRequest.m in Sources */,
+				A1B6AB7B253D906500C2097D /* LMRequest+RAC.m in Sources */,
+				A1E6A12B2531AE4300A880DC /* UITableView+Lmps.m in Sources */,
+				A1E6A0F72531655000A880DC /* main.m in Sources */,
+				A1E6A13F2531AE5D00A880DC /* LMRequest.m in Sources */,
+				A1E6A1442531AE5D00A880DC /* LMRequestGlobalParams.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A1E6A0F22531655000A880DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1E6A0F32531655000A880DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1E6A0F82531655000A880DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A1E6A0F92531655000A880DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1E6A0FB2531655000A880DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4A3C0FDEC300BC67E70EB18 /* Pods-SLRACNetwork.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SLRACNetwork/PrefixHeader.pch";
+				INFOPLIST_FILE = SLRACNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sl-network.www";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_SWIFT_SYMBOLS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A1E6A0FC2531655000A880DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FD74DEE721D8C805E2E69FB /* Pods-SLRACNetwork.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SLRACNetwork/PrefixHeader.pch";
+				INFOPLIST_FILE = SLRACNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sl-network.www";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_SWIFT_SYMBOLS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1E6A0DC2531654F00A880DC /* Build configuration list for PBXProject "SLRACNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1E6A0F82531655000A880DC /* Debug */,
+				A1E6A0F92531655000A880DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1E6A0FA2531655000A880DC /* Build configuration list for PBXNativeTarget "SLRACNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1E6A0FB2531655000A880DC /* Debug */,
+				A1E6A0FC2531655000A880DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1E6A0D92531654F00A880DC /* Project object */;
+}

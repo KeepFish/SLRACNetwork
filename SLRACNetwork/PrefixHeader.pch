@@ -1,0 +1,40 @@
+//
+//  PrefixHeader.pch
+//  lmps-driver
+//
+//  Created on 2017/3/3.
+//  Copyright © 2017年 Come56. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/** 图片 */
+#define ImageNamed(x) [UIImage imageNamed:x]
+#define ImageViewWithImageName(x) [[UIImageView alloc] initWithImage:ImageNamed(x)]
+
+/** className **/
+#define ClassName(x) NSStringFromClass([x class])
+
+#define BASE_URL @"www.baidu.com"
+
+#define WeakSelf      typeof(self) __weak wkSelf = self;
+#define StrongWeakSelf   typeof(wkSelf) __strong stSelf = wkSelf;
+
+/** 屏幕宽高 bounds */
+#define SCREEN_BOUNDS ([[UIScreen mainScreen] bounds])
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SMALL_SCREEN (SCREEN_WIDTH < 375)
+
+/* 调试日志打印 */
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#   define DLog(...)
+#endif
+
+#endif /* PrefixHeader_pch */
