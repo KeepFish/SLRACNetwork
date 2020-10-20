@@ -7,7 +7,7 @@
 //
 
 #import "LMRequestResult.h"
-#import "NSURLRequest+LMNetwork.h"
+#import "NSURLRequest+LMRequest.h"
 
 NSString * const LMNetworkResponseErrorKey = @"com.sl.error.response";
 

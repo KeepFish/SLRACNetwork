@@ -7,9 +7,10 @@
 //
 
 #import "LMRequestProxy.h"
-#import "NSURLRequest+LMNetwork.h"
+#import "NSURLRequest+LMRequest.h"
 #import <AFNetworking/AFNetworking.h>
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "LMRequestResult.h"
 
 @interface LMRequestProxy()
 
@@ -127,11 +128,6 @@
     return _sessionManager;
 }
 
-@end
-
-#pragma mark - 请求生成
-@implementation LMRequestProxy (RequestGenerator)
-
 + (NSURLRequest *)requestWithMethod:(NSString *)method
                             baseUrl:(NSString *)baseUrl
                                path:(NSString *)path
@@ -140,7 +136,7 @@
     serializer.timeoutInterval = 30;
 
     NSError *error = nil;
-    NSString *url = [NSString stringWithFormat:@"%@/%@", baseUrl, path];
+    NSString *url = [NSString stringWithFormat:@"%@%@", baseUrl, path];
     NSMutableURLRequest *request = [serializer requestWithMethod:method URLString:url parameters:params error:&error];
     request.lm_requestParams = params;
     

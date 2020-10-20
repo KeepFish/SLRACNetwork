@@ -19,7 +19,7 @@ typedef NS_ENUM (NSUInteger, LMRequestType) {
     LMRequestTypePut
 };
 
-// 接口请求参数协议
+// 接口请求参数
 @protocol LMRequestDataSource <NSObject>
 
 @required
@@ -28,7 +28,7 @@ typedef NS_ENUM (NSUInteger, LMRequestType) {
 
 @end
 
-// 底层网络请求状态返回代理
+// 网络请求结果返回代理
 @protocol LMRequestDelegate <NSObject>
 
 @required
@@ -45,7 +45,7 @@ typedef NS_ENUM (NSUInteger, LMRequestType) {
 // load之前 返回false请求不会执行
 - (BOOL)lm_request:(LMRequest *)request willLoadWithParams:(NSDictionary *)params;
 
-// 将要处理result
+// 将要处理result 这里可以给result添加error
 - (void)lm_request:(LMRequest *)request willProcessResult:(LMRequestResult *)result;
 
 @end
@@ -62,13 +62,14 @@ typedef NS_ENUM (NSUInteger, LMRequestType) {
 @property (nonatomic, assign, readonly) BOOL isLoading;
 @property (nonatomic, assign, readonly) BOOL isReachable;
 
+// yes则fetchData为字典类型 no则不确定
 @property (nonatomic, assign) BOOL isResponseJsonable;      // default YES
 @property (nonatomic, assign, getter=isShowErrorMessage) BOOL showErrorMessage; // default YES
 @property (nonatomic, assign, getter=isShowLoading) BOOL showLoading;       // default YES
 @property (nonatomic, assign) LMRequestType requestType;    // default LMRequestTypePost
 
 @property (nonatomic, copy) NSString *path;
-@property (nonatomic, copy) NSString *baseUrl; // 地址库和图片服务器接口地址不同 需要单独设置
+@property (nonatomic, copy) NSString *baseUrl; // 单独设置请求基地址
 
 + (instancetype)requestWithPath:(NSString *)path;
 + (instancetype)requestWithPath:(NSString *)path type:(LMRequestType)type;

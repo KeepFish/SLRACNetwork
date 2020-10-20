@@ -1,15 +1,15 @@
 //
 //  NSURLRequest+LMRequest.m
-//  lmps-driver
+//  SLRACNetwork
 //
-//  Created on 17/4/8.
-//  Copyright © 2017年 Come56. All rights reserved.
+//  Created by 孙立 on 2020/10/20.
+//  Copyright © 2020 sl. All rights reserved.
 //
 
-#import "NSURLRequest+LMNetwork.h"
+#import "NSURLRequest+LMRequest.h"
 #import <objc/runtime.h>
 
-@implementation NSURLRequest (LMNetwork)
+@implementation NSURLRequest (LMRequest)
 
 - (void)setLm_requestParams:(NSDictionary *)lm_requestParams {
     objc_setAssociatedObject(self, @selector(lm_requestParams), lm_requestParams, OBJC_ASSOCIATION_COPY);

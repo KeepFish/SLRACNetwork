@@ -80,7 +80,7 @@
 @end
 
 
-@implementation LMListRequest (ReactiveExtension)
+@implementation LMListRequest (RAC)
 
 - (RACCommand *)requestCommand {
     @throw [NSException exceptionWithName:[NSString stringWithFormat:@"%@ requestCommand error",[self class]]

@@ -20,7 +20,11 @@ static const NSInteger LMPageNetworkDefaultPageSize = 15;
 
 @implementation LMListRequest
 
-+ (instancetype)createRequestWithPath:(NSString *)path type:(LMRequestType)type {
++ (instancetype)requestWithPath:(NSString *)path {
+    return [self requestWithPath:path type:LMRequestTypeGet];
+}
+
++ (instancetype)requestWithPath:(NSString *)path type:(LMRequestType)type {
     LMListRequest *request = [super requestWithPath:path type:type];
     request.showLoading = NO;
     request.pageSize = LMPageNetworkDefaultPageSize;
@@ -28,7 +32,6 @@ static const NSInteger LMPageNetworkDefaultPageSize = 15;
     return request;
 }
 
-#pragma mark - 逻辑处理
 - (void)reset {
     [self resetToPage:LMPageNetworkStartPage];
 }
@@ -55,7 +58,7 @@ static const NSInteger LMPageNetworkDefaultPageSize = 15;
 - (NSDictionary *)reformParams:(NSDictionary *)params {
     NSMutableDictionary *finalParams = [NSMutableDictionary dictionaryWithDictionary:params];
     finalParams[@"page"] = @(self.currentPage + 1);
-    finalParams[@"per_page"] = @(self.pageSize);
+    finalParams[@"pageSize"] = @(self.pageSize);
     return finalParams;
 }
 

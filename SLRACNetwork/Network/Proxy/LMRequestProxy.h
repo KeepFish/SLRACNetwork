@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LMRequestResult.h"
+
+@class LMRequestResult;
 
 typedef void(^LMNetworkFinishedBlock)(LMRequestResult *result);
 
@@ -21,10 +22,6 @@ typedef void(^LMNetworkFinishedBlock)(LMRequestResult *result);
 
 - (void)cancelRequestWithRequestId:(NSNumber *)requestId;
 - (void)cancelRequestWithRequestIdList:(NSArray *)requestIdList;
-
-@end
-
-@interface LMRequestProxy(LMRequestGenerator)
 
 + (NSURLRequest *)requestWithMethod:(NSString *)method
                                path:(NSString *)path

@@ -10,25 +10,7 @@
 #import "LMListRequest.h"
 #import <ReactiveObjC.h>
 
-@protocol LMRequestRacOperationProtocal <NSObject>
-
-- (RACCommand *)requestCommand;
-- (RACCommand *)cancelCommand;
-- (RACSignal *)requestErrorSignal;
-- (RACSignal *)executionSignal;
-
-@end
-
-
-@protocol LMListRequestRacOperationProtocal <NSObject>
-
-- (RACCommand *)refreshCommand;
-- (RACCommand *)requestNextPageCommand;
-
-@end
-
-
-@interface LMRequest (RAC) <LMRequestRacOperationProtocal>
+@interface LMRequest (RAC)
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 @property (nonatomic, strong, readonly) RACCommand *cancelCommand;
@@ -38,7 +20,7 @@
 
 @end
 
-@interface LMListRequest (RAC) <LMListRequestRacOperationProtocal>
+@interface LMListRequest (RAC)
 
 @property (nonatomic, strong, readonly) RACCommand *refreshCommand;
 @property (nonatomic, strong, readonly) RACCommand *requestNextPageCommand;

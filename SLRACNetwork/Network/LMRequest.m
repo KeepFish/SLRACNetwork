@@ -7,7 +7,6 @@
 //
 
 #import <SVProgressHUD/SVProgressHUD.h>
-#import <ReactiveObjC/ReactiveObjC.h>
 #import "LMRequest.h"
 #import "LMRequestProxy.h"
 #import "LMRequestGlobalParams.h"
@@ -81,10 +80,10 @@ static NSDictionary *methodTypeDict;
         [finalParams addEntriesFromDictionary:@{@"params": requestParams}];
         NSString *method = methodTypeDict[@(self.requestType)];
         NSURLRequest *request = [LMRequestProxy requestWithMethod:method baseUrl:self.baseUrl path:self.path params:finalParams];
-        @weakify(self);
+        WeakSelf
         requestID = [self.proxy loadRequest:request finished:^(LMRequestResult *result) {
-            @strongify(self);
-            [self requestDidFinished:result];
+            StrongWeakSelf
+            [stSelf requestDidFinished:result];
         }];
     }
     self.requestID = requestID;

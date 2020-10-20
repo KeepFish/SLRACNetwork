@@ -1,14 +1,14 @@
 //
 //  NSURLRequest+LMRequest.h
-//  lmps-driver
+//  SLRACNetwork
 //
-//  Created on 17/4/8.
-//  Copyright © 2017年 Come56. All rights reserved.
+//  Created by 孙立 on 2020/10/20.
+//  Copyright © 2020 sl. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface NSURLRequest (LMNetwork)
+@interface NSURLRequest (LMRequest)
 
 @property (nonatomic, copy) NSDictionary *lm_requestParams;
 
