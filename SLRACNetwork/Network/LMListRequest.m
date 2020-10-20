@@ -55,11 +55,12 @@ static const NSInteger LMPageNetworkDefaultPageSize = 15;
                                  userInfo:nil];
 }
 
-- (NSDictionary *)reformParams:(NSDictionary *)params {
-    NSMutableDictionary *finalParams = [NSMutableDictionary dictionaryWithDictionary:params];
+- (BOOL)lm_willLoadWithParams:(NSDictionary *__autoreleasing *)params {
+    NSMutableDictionary *finalParams = [NSMutableDictionary dictionaryWithDictionary:*params];
     finalParams[@"page"] = @(self.currentPage + 1);
     finalParams[@"pageSize"] = @(self.pageSize);
-    return finalParams;
+    *params = [finalParams copy];
+    return [super lm_willLoadWithParams:params];
 }
 
 - (void)lm_didProcessResult:(LMRequestResult *)result {

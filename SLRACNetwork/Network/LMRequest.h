@@ -42,8 +42,8 @@ typedef NS_ENUM (NSUInteger, LMRequestType) {
 
 @optional
 
-// load之前 返回false请求不会执行
-- (BOOL)lm_request:(LMRequest *)request willLoadWithParams:(NSDictionary *)params;
+// load之前 返回false请求不会执行 也可以对params进行处理（同LMListRequest）
+- (BOOL)lm_request:(LMRequest *)request willLoadWithParams:(NSDictionary **)params;
 
 // 将要处理result 这里可以给result添加error
 - (void)lm_request:(LMRequest *)request willProcessResult:(LMRequestResult *)result;
@@ -80,14 +80,14 @@ typedef NS_ENUM (NSUInteger, LMRequestType) {
 
 - (void)cancel;
 
-#pragma mark - 拦截器
+#pragma mark - 子类处理
 
 // 这里对result添加error有效
 - (void)lm_willProcessResult:(LMRequestResult *)result;
 
 - (void)lm_didProcessResult:(LMRequestResult *)result;
 
-// 返回NO就不会发请求
-- (BOOL)lm_willLoadWithParams:(NSDictionary *)params;
+// 返回NO就不会发请求 也可以对params进行处理（见LMListRequest）
+- (BOOL)lm_willLoadWithParams:(NSDictionary **)params;
 
 @end
