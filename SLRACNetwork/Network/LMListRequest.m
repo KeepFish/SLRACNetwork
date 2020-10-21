@@ -16,6 +16,8 @@ static const NSInteger LMPageNetworkDefaultPageSize = 15;
 @property (nonatomic, assign, readwrite) NSInteger currentPage;
 @property (nonatomic, assign, readwrite) NSInteger maxPage;
 
+@property (nonatomic, assign) BOOL isRefresh;
+
 @end
 
 @implementation LMListRequest
@@ -32,19 +34,24 @@ static const NSInteger LMPageNetworkDefaultPageSize = 15;
     return request;
 }
 
-- (void)reset {
-    [self resetToPage:LMPageNetworkStartPage];
+- (NSInteger)refresh {
+    return [self loadPage:LMPageNetworkStartPage];
 }
 
-- (void)resetToPage:(NSInteger)page {
-    page = page > self.maxPage ? self.maxPage : page;
+- (NSInteger)loadPage:(NSInteger)page {
     self.currentPage = page;
+    return [self _load];
 }
 
 - (NSInteger)loadNextPage {
+    return [self _load];
+}
+
+- (NSInteger)_load {
     if (self.isLoading) {
         return LMListRequestIsLoading;
     }
+    self.isRefresh = self.currentPage == LMPageNetworkStartPage;
     return [super load];
 }
 
@@ -59,7 +66,7 @@ static const NSInteger LMPageNetworkDefaultPageSize = 15;
     NSMutableDictionary *finalParams = [NSMutableDictionary dictionaryWithDictionary:*params];
     finalParams[@"page"] = @(self.currentPage + 1);
     finalParams[@"pageSize"] = @(self.pageSize);
-    *params = [finalParams copy];
+    *params = finalParams;
     return [super lm_willLoadWithParams:params];
 }
 
@@ -84,12 +91,18 @@ static const NSInteger LMPageNetworkDefaultPageSize = 15;
     _pageSize = (pageSize <= 0 ? LMPageNetworkDefaultPageSize : pageSize);
 }
 
-- (void)setCurrentPage:(NSInteger)currentPage {
-    _currentPage = MAX(LMPageNetworkStartPage, currentPage);
-}
-
 - (BOOL)hasNextPage {
     return self.currentPage < self.maxPage;
+}
+
+- (void)setCurrentPage:(NSInteger)currentPage {
+    NSInteger page = currentPage;
+    if (page < 0) {
+        page = 0;
+    } else {
+        page = page > self.maxPage ? self.maxPage : page;
+    }
+    _currentPage = page;
 }
 
 @end

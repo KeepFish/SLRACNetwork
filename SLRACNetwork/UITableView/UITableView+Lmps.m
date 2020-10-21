@@ -66,7 +66,7 @@
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self, request);
         self.isRequestDone = NO;
-        [request.refreshCommand execute:nil];
+        [request refresh];
         
     }];
     header.lastUpdatedTimeLabel.hidden = YES;
@@ -77,7 +77,7 @@
     MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         @strongify(self, request);
         self.isRequestDone = NO;
-        [request.requestNextPageCommand execute:nil];
+        [request loadNextPage];
     }];
     self.mj_footer = footer;
     
@@ -90,7 +90,7 @@
         [disposables removeAllObjects];
         
         // 请求成功后，设置refresh控件的状态以及reloadData
-        [disposables addObject:[request.executionSignal subscribeNext:^(NSNumber *isRefresh) {
+        [disposables addObject:[request.successSignal subscribeNext:^(NSNumber *isRefresh) {
             @strongify(self, request);
             if (self) {
                 self.isRequestDone = YES;
@@ -103,7 +103,7 @@
         }]];
         
         // 请求失败时，重置refresh控件的状态
-        [disposables addObject:[request.requestErrorSignal subscribeNext:^(id  _Nullable x) {
+        [disposables addObject:[request.errorSignal subscribeNext:^(id  _Nullable x) {
             @strongify(self);
             if (self) {
                 self.isRequestDone = YES;

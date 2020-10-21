@@ -12,17 +12,11 @@
 
 @interface LMRequest (RAC)
 
-@property (nonatomic, strong, readonly) RACCommand *requestCommand;
-@property (nonatomic, strong, readonly) RACCommand *cancelCommand;
-@property (nonatomic, strong, readonly) RACSignal *requestErrorSignal; //已为主线程
-@property (nonatomic, strong, readonly) RACSignal *executionSignal;
-@property (nonatomic, strong, readonly) RACSignal *requestDoneSignal;
-
-@end
-
-@interface LMListRequest (RAC)
-
-@property (nonatomic, strong, readonly) RACCommand *refreshCommand;
-@property (nonatomic, strong, readonly) RACCommand *requestNextPageCommand;
+// 订阅返回LMError
+@property (nonatomic, strong, readonly) RACSignal *errorSignal;
+// 订阅返回LMResult
+@property (nonatomic, strong, readonly) RACSignal *successSignal;
+// 请求成功YES 失败NO
+@property (nonatomic, strong, readonly) RACSignal *requestFinishSignal;
 
 @end

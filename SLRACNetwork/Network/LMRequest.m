@@ -76,7 +76,7 @@ static NSDictionary *methodTypeDict;
     NSInteger requestID = -1;
     if ([self lm_willLoadWithParams:&params]) {
         NSMutableDictionary *finalParams = [[LMRequestGlobalParams globalParams] mutableCopy];
-        [finalParams addEntriesFromDictionary:@{@"params": params}];
+        [finalParams addEntriesFromDictionary:@{@"params": params.copy}];
         NSString *method = methodTypeDict[@(self.requestType)];
         NSURLRequest *request = [LMRequestProxy requestWithMethod:method baseUrl:self.baseUrl path:self.path params:finalParams];
         WeakSelf

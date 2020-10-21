@@ -18,7 +18,7 @@
 - (instancetype)init {
     if (self = [super init]){
         WeakSelf
-        [self.listRequest.executionSignal subscribeNext:^(id x) {
+        [self.listRequest.successSignal subscribeNext:^(id x) {
             StrongWeakSelf
             // 为true就是刷新 所以先清除所有数据
             if ([x boolValue]) {

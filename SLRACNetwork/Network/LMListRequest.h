@@ -17,9 +17,11 @@ static const NSInteger LMListRequestIsLoading = NSIntegerMax;
 @property (nonatomic, assign, readonly) NSInteger maxPage;
 @property (nonatomic, assign, readonly) BOOL hasNextPage;
 
-- (void)reset;
-- (void)resetToPage:(NSInteger)page;
+// 是否是刷新
+@property (nonatomic, assign, readonly) BOOL isRefresh;
 
+- (NSInteger)refresh;
 - (NSInteger)loadNextPage;
+- (NSInteger)loadPage:(NSInteger)page;
 
 @end

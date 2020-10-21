@@ -39,7 +39,7 @@
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     self.tableView.frame = self.view.bounds;
-    [self.viewModel.listRequest.refreshCommand execute:nil];
+    [self.viewModel.listRequest refresh];
 }
 
 #pragma mark -
