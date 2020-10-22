@@ -45,7 +45,7 @@
 
 - (NSInteger)loadRequest:(NSURLRequest *)request finished:(LMNetworkFinishedBlock)finished {
     
-    __block NSURLSessionDataTask *dataTask = nil;
+    NSURLSessionDataTask *dataTask = nil;
     WeakSelf
     dataTask = [self.sessionManager dataTaskWithRequest:request
                                          uploadProgress:nil
@@ -55,16 +55,21 @@
         NSNumber *requestId = @([dataTask taskIdentifier]);
         StrongWeakSelf
         [stSelf.dispatchTable removeObjectForKey:requestId];
+        LMRequestError *lmError = nil;
+
         NSDictionary *dic;
         if ([responseObject isKindOfClass:[NSData class]]) {
             responseData = responseObject;
-            dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+            NSError *jsonError = nil;
+            dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:&jsonError];
+            if (jsonError != nil) {
+                lmError = [LMRequestError errorWithMessage:@"JSON解析失败" code:LMRequestResponseJSONSerializeFailed];
+            }
         }
+        
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         NSInteger statusCode = [httpResponse statusCode];
-            
-        LMRequestError *lmError = nil;
-
+        
         if (error) {
             NSString *message = dic[@"message"];
             if (!message) {

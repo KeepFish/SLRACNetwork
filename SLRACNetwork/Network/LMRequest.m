@@ -106,17 +106,17 @@ static NSDictionary *methodTypeDict;
 }
 
 - (void)_requestDidSuccess:(LMRequestResult *)result {
-    
+    DLog(@"%@ %@ ==> success: %@", self.path, result.requestParams, self.responseData);
     if (self.isResponseJsonable) {
         if (result.responseDic) {
             self.responseData = result.responseDic;
-        } else {
-            DLog(@"Json decode failed \nresponseData: \n\n%@\n\n", [[NSString alloc] initWithData:result.responseData encoding:NSUTF8StringEncoding]);
         }
     } else {
         self.responseData = [result.responseData copy];
     }
-    DLog(@"%@ %@ ==> success: %@", self.path, result.requestParams, self.responseData);
+    if (self.isShowLoading) {
+        [SVProgressHUD popActivity];
+    }
 }
 
 - (void)_requestDidFail:(LMRequestResult *)result {
@@ -159,9 +159,7 @@ static NSDictionary *methodTypeDict;
 }
 
 - (void)lm_didProcessResult:(LMRequestResult *)result {
-    if (self.isShowLoading) {
-        [SVProgressHUD popActivity];
-    }
+    
 }
 
 - (BOOL)lm_willLoadWithParams:(NSDictionary *__autoreleasing *)params {

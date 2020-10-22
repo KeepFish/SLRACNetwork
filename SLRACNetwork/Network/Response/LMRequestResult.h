@@ -10,6 +10,7 @@
 
 typedef NS_ENUM(NSInteger, LMRequestResponseCode) {
     LMRequestResponseCodeNeedLogin = 401,
+    LMRequestResponseJSONSerializeFailed = 777,
 };
 
 @interface LMRequestError: NSError
