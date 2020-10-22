@@ -80,9 +80,10 @@ static const NSInteger LMPageNetworkDefaultPageSize = 15;
         self.currentPage--;
     } else {
         NSDictionary *headerDic = result.headerDic;
+        // maxpage 得放前面 不然会影响currentPage的值
+        self.maxPage = (NSInteger)ceil([headerDic[@"X-Page-TotalCount"] doubleValue] / self.pageSize);
         self.currentPage = [headerDic[@"X-Page-CurrentPage"] intValue];
         self.pageSize = [headerDic[@"X-Page-PerPage"] intValue];
-        self.maxPage = (NSInteger)ceil([headerDic[@"X-Page-TotalCount"] doubleValue] / self.pageSize);
     }
 }
 

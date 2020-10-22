@@ -24,13 +24,16 @@ static NSDictionary *methodTypeDict;
 @implementation LMRequest
 
 + (void)initialize {
-    methodTypeDict = @{
-                @(LMRequestTypePost): @"POST",
-                @(LMRequestTypeGet): @"GET",
-                @(LMRequestTypeDelete): @"DELETE",
-                @(LMRequestTypePatch): @"PATCH",
-                @(LMRequestTypePut): @"PUT",
-            };
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        methodTypeDict = @{
+            @(LMRequestTypePost): @"POST",
+            @(LMRequestTypeGet): @"GET",
+            @(LMRequestTypeDelete): @"DELETE",
+            @(LMRequestTypePatch): @"PATCH",
+            @(LMRequestTypePut): @"PUT",
+        };
+    });
 }
 
 + (instancetype)requestWithPath:(NSString *)path {
