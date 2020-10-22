@@ -34,7 +34,7 @@
 
 - (NSDictionary *)lm_paramsForRequest:(LMRequest *)request {
     return @{
-        @"": @"3",
+        @"name": @"张三",
     };
 }
 

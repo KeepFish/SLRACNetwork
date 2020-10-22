@@ -11,15 +11,13 @@
 @implementation UserRequest
 
 + (instancetype)requestForGetUserInfo {
-    UserRequest *request = [self requestWithPath:@"Driver/Driver/getinfo"];
-    request.showLoading = NO;
-    request.showErrorMessage = NO;
+    UserRequest *request = [self requestWithPath:@""];
     
     return request;
 }
 
 + (instancetype)requestForUpdateUserInfo {
-    UserRequest *request = [self requestWithPath:@"Driver/Driver/updateavatar"];
+    UserRequest *request = [self requestWithPath:@""];
     request.showLoading = NO;
     
     return request;

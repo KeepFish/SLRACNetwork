@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import <SVProgressHUD.h>
 
 @implementation AppDelegate
 
@@ -17,6 +18,9 @@
     self.window.rootViewController = [ViewController new];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setMinimumDismissTimeInterval:3.f];
+    [SVProgressHUD setMaxSupportedWindowLevel:UIWindowLevelAlert];
     return YES;
 }
 

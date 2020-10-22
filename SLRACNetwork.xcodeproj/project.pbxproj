@@ -13,6 +13,8 @@
 		A1B6AB81253E773800C2097D /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B6AB80253E773800C2097D /* ListViewController.m */; };
 		A1B6AB85253E957600C2097D /* ListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B6AB84253E957600C2097D /* ListViewModel.m */; };
 		A1B6AB8B253EC49E00C2097D /* NSURLRequest+LMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B6AB8A253EC49E00C2097D /* NSURLRequest+LMRequest.m */; };
+		A1B6AB8E25415F0B00C2097D /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B6AB8D25415F0B00C2097D /* ViewModel.m */; };
+		A1B6AB9125415F3200C2097D /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B6AB9025415F3200C2097D /* UserModel.m */; };
 		A1E6A0E62531654F00A880DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A0E52531654F00A880DC /* AppDelegate.m */; };
 		A1E6A0EC2531654F00A880DC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6A0EB2531654F00A880DC /* ViewController.m */; };
 		A1E6A0F12531655000A880DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E6A0F02531655000A880DC /* Assets.xcassets */; };
@@ -41,6 +43,10 @@
 		A1B6AB86253EBFEF00C2097D /* LMNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMNetwork.h; sourceTree = "<group>"; };
 		A1B6AB89253EC49E00C2097D /* NSURLRequest+LMRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+LMRequest.h"; sourceTree = "<group>"; };
 		A1B6AB8A253EC49E00C2097D /* NSURLRequest+LMRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+LMRequest.m"; sourceTree = "<group>"; };
+		A1B6AB8C25415F0B00C2097D /* ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
+		A1B6AB8D25415F0B00C2097D /* ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewModel.m; sourceTree = "<group>"; };
+		A1B6AB8F25415F3200C2097D /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		A1B6AB9025415F3200C2097D /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		A1E6A0E12531654F00A880DC /* SLRACNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLRACNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E6A0E42531654F00A880DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A1E6A0E52531654F00A880DC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -119,6 +125,10 @@
 				A1E6A1282531AE4300A880DC /* UITableView */,
 				A1E6A0EA2531654F00A880DC /* ViewController.h */,
 				A1E6A0EB2531654F00A880DC /* ViewController.m */,
+				A1B6AB8F25415F3200C2097D /* UserModel.h */,
+				A1B6AB9025415F3200C2097D /* UserModel.m */,
+				A1B6AB8C25415F0B00C2097D /* ViewModel.h */,
+				A1B6AB8D25415F0B00C2097D /* ViewModel.m */,
 				A1B6AB7F253E773800C2097D /* ListViewController.h */,
 				A1B6AB80253E773800C2097D /* ListViewController.m */,
 				A1B6AB83253E957600C2097D /* ListViewModel.h */,
@@ -321,12 +331,14 @@
 				A1E6A0E62531654F00A880DC /* AppDelegate.m in Sources */,
 				A1E6A1452531AE5D00A880DC /* LMListRequest.m in Sources */,
 				A1B6AB7B253D906500C2097D /* LMRequest+RAC.m in Sources */,
+				A1B6AB9125415F3200C2097D /* UserModel.m in Sources */,
 				A1E6A12B2531AE4300A880DC /* UITableView+Lmps.m in Sources */,
 				A1B6AB7E253E70D100C2097D /* UserRequest.m in Sources */,
 				A1E6A0F72531655000A880DC /* main.m in Sources */,
 				A1B6AB85253E957600C2097D /* ListViewModel.m in Sources */,
 				A1B6AB81253E773800C2097D /* ListViewController.m in Sources */,
 				A1E6A13F2531AE5D00A880DC /* LMRequest.m in Sources */,
+				A1B6AB8E25415F0B00C2097D /* ViewModel.m in Sources */,
 				A1B6AB8B253EC49E00C2097D /* NSURLRequest+LMRequest.m in Sources */,
 				A1E6A1442531AE5D00A880DC /* LMRequestGlobalParams.m in Sources */,
 			);

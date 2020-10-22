@@ -40,7 +40,7 @@
         }] deliverOnMainThread] subscribeNext:^(LMRequestResult *result) {
             @strongify(self);
             if (result.error != nil) {
-                [self.errorSubject sendError:result.error];
+                [self.errorSubject sendNext:result.error];
             }
         }];
         objc_setAssociatedObject(self, @selector(errorSubject), errorSubject, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

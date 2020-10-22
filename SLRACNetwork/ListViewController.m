@@ -20,21 +20,6 @@
 
 @implementation ListViewController
 
-- (instancetype)init {
-    if (self = [super init]) {
-        [self setUpRac];
-    }
-    return self;
-}
-
-- (void)setUpRac {
-    WeakSelf
-    [[RACObserve(self.viewModel, dataSource) skip:1] subscribeNext:^(id  _Nullable x) {
-      StrongWeakSelf
-        [stSelf.tableView reloadData];
-    }];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
@@ -58,7 +43,7 @@
         _tableView = [UITableView lm_tableViewWithStyle:UITableViewStylePlain];
         [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:ClassName(UITableViewCell)];
         _tableView.dataSource = self;
-        [_tableView lm_bindRefreshingWithPageRequest:self.viewModel.listRequest];
+        [_tableView lm_bindRefreshingWithListRequest:self.viewModel.listRequest];
     }
     return _tableView;
 }

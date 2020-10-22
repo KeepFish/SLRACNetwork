@@ -45,22 +45,20 @@
 @implementation UITableView (Lmps)
 
 + (instancetype)lm_tableViewWithStyle:(UITableViewStyle)style {
-    
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:style];
     tableView.estimatedRowHeight = 44.f;
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, SCREEN_WIDTH, 1.f)];
-    
     return tableView;
 }
 
 #pragma mark - MJRefresh binding
-- (void)lm_bindRefreshingWithPageRequest:(LMListRequest *)request {
-    [self lm_bindRefreshingWithPageRequest:request autoChangeStatus:YES];
+- (void)lm_bindRefreshingWithListRequest:(LMListRequest *)request {
+    [self lm_bindRefreshingWithListRequest:request autoChangeStatus:YES];
 }
 
-- (void)lm_bindRefreshingWithPageRequest:(LMListRequest *)request autoChangeStatus:(BOOL)autoChange {
+- (void)lm_bindRefreshingWithListRequest:(LMListRequest *)request autoChangeStatus:(BOOL)autoChange {
     @weakify(self, request);
     // refresh header
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -99,6 +97,7 @@
                     [self.mj_header endRefreshing];
                 }
                 request.hasNextPage ? [self.mj_footer endRefreshing] : [self.mj_footer endRefreshingWithNoMoreData];
+                [self reloadData];
             }
         }]];
         

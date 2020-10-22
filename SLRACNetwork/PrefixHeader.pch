@@ -19,7 +19,7 @@
 /** className **/
 #define ClassName(x) NSStringFromClass([x class])
 
-#define BASE_URL @"www.baidu.com"
+#define BASE_URL @"https://www.baidu.com"
 
 #define WeakSelf      typeof(self) __weak wkSelf = self;
 #define StrongWeakSelf   typeof(wkSelf) __strong stSelf = wkSelf;

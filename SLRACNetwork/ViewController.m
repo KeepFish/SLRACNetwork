@@ -7,74 +7,71 @@
 //
 
 #import "ViewController.h"
-#import "UserRequest.h"
+#import "ViewModel.h"
+#import <SVProgressHUD.h>
 
-@interface ViewController () <LMRequestDataSource>
+@interface ViewController ()
 
-@property (nonatomic, strong) UserRequest *updateUserInfoRequest;
-@property (nonatomic, assign) NSInteger count;
-/** <#code#> */
-@property (nonatomic, strong) RACCommand *commmand;
+@property (nonatomic, strong) ViewModel *viewModel;
 
 @end
 
 @implementation ViewController
 
+- (instancetype)init {
+    if (self = [super init]) {
+        [self setUpRac];
+    }
+    return self;
+}
 
--(void)viewDidLoad {
+- (void)setUpRac {
+    WeakSelf
+    // 有关rac的操作建议写viewDidLoad或者init 保证只会订阅一次
+    [self.viewModel.updateUserInfoRequest.successSignal subscribeNext:^(id  _Nullable x) {
+        StrongWeakSelf
+        DLog(@"model => %p \n name = %@", stSelf.viewModel.model, stSelf.viewModel.model.name);
+        [SVProgressHUD showSuccessWithStatus:@"修改用户信息成功"];
+    }];
+    // 错误会自动弹框 一般就够了 需要自定义处理可以这样订阅
+    [self.viewModel.updateUserInfoRequest.errorSignal subscribeNext:^(id  _Nullable x) {
+        
+    }];
+}
+
+- (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 这里model就有值了 或者通过观察model的值 然后进行UI更新等操作
     WeakSelf
-    [self.updateUserInfoRequest.successSignal subscribeNext:^(LMRequestResult *result) {
+    [self.viewModel.userInfoRequest.successSignal subscribeNext:^(id  _Nullable x) {
         StrongWeakSelf
-        // 直接拿到dic
-        NSDictionary *dic = [stSelf.updateUserInfoRequest fetchData];
-        // 通过result
-        NSDictionary *dic2 = result.responseDic;
+        [SVProgressHUD showSuccessWithStatus:@"获取到用户信息"];
+        DLog(@"model => %p \n name = %@", stSelf.viewModel.model, stSelf.viewModel.model.name);
     }];
-    [self.updateUserInfoRequest.errorSignal subscribeNext:^(LMRequestResult *result) {
-        // 处理错误
+    
+    // 会在set方法触发的时候就sendnext 要注意
+    [[RACObserve(self.viewModel, model) skip:1] subscribeNext:^(id  _Nullable x) {
+        DLog(@"x => %p", x);
     }];
-    self.commmand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-            if (wkSelf.count == 3) {
-                [subscriber sendError:[NSError errorWithDomain:@"321321" code:123 userInfo:nil]];
-            } else {
-                [subscriber sendNext:@(wkSelf.count++)];
-            }
-            [subscriber sendCompleted];
-            return nil;
-        }];
-    }];
-    [[self.commmand.executionSignals switchToLatest] subscribeNext:^(id  _Nullable x) {
-        NSLog(@"%@", x);
-    }];
+    [self.viewModel.userInfoRequest load];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.commmand execute:nil];
-    [super touchesBegan:touches withEvent:event];
+    [self updateUserInfo];
 }
 
-- (void)sss {
-    
+- (void)updateUserInfo {
+    self.viewModel.name = @"王五";
+    self.viewModel.age = 11;
+    [self.viewModel.updateUserInfoRequest load];
 }
 
-- (void)update {
-    [self.updateUserInfoRequest load];
-}
-
-- (NSDictionary *)lm_paramsForRequest:(LMRequest *)request {
-    return @{
-        @"name": @"张三"
-    };
-}
-
-- (UserRequest *)updateUserInfoRequest {
-    if (_updateUserInfoRequest == nil) {
-        _updateUserInfoRequest = [UserRequest requestForUpdateUserInfo];
-        _updateUserInfoRequest.dataSource = self;
+- (ViewModel *)viewModel {
+    if (_viewModel == nil) {
+        _viewModel = [ViewModel new];
     }
-    return _updateUserInfoRequest;
+    return _viewModel;
 }
+
 @end

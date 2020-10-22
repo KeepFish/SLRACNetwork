@@ -16,9 +16,9 @@
 
 + (instancetype)lm_tableViewWithStyle:(UITableViewStyle)style;
 
-- (void)lm_bindRefreshingWithPageRequest:(LMListRequest *)request;
+- (void)lm_bindRefreshingWithListRequest:(LMListRequest *)request;
 // 是否自动改变header footer的刷新状态
-- (void)lm_bindRefreshingWithPageRequest:(LMListRequest *)request autoChangeStatus:(BOOL)subscribing;
+- (void)lm_bindRefreshingWithListRequest:(LMListRequest *)request autoChangeStatus:(BOOL)subscribing;
 
 - (void)headerBeginRefreshing;
 - (void)footerBeginRefreshing;
