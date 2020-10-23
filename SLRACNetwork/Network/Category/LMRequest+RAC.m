@@ -57,21 +57,35 @@
 }
 
 - (RACSignal *)requestFinishSignal {
-    RACSignal *successSignal = [self.successSignal mapReplace:@YES];
-    RACSignal *errorSignal = [self.errorSignal mapReplace:@NO];
-    
-    return [RACSignal merge:@[successSignal, errorSignal]];
+    RACSignal *requestFinishSignal = objc_getAssociatedObject(self, @selector(requestFinishSignal));
+    if (requestFinishSignal == nil) {
+        RACSignal *successSignal = [self.successSignal mapReplace:@YES];
+        RACSignal *errorSignal = [self.errorSignal mapReplace:@NO];
+        requestFinishSignal = [RACSignal merge:@[successSignal, errorSignal]];
+        objc_setAssociatedObject(self, @selector(requestFinishSignal), requestFinishSignal, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return requestFinishSignal;
 }
 
 @end
 
 @implementation LMListRequest (RAC)
 
+- (RACSignal *)mapSuccessSignal {
+    RACSignal *mapSuccessSignal = objc_getAssociatedObject(self, @selector(mapSuccessSignal));
+    if (mapSuccessSignal == nil) {
+        @weakify(self);
+        mapSuccessSignal = [self.successSubject map:^id _Nullable(id  _Nullable value) {
+            @strongify(self);
+            return @(self.isRefresh);
+        }];
+        objc_setAssociatedObject(self, @selector(mapSuccessSignal), mapSuccessSignal, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return mapSuccessSignal;
+}
+
 - (RACSignal *)successSignal {
-    return [self.successSubject map:^id _Nullable(id  _Nullable value) {
-        return @(self.isRefresh);
-    }];
+    return self.mapSuccessSignal;
 }
 
 @end
-
