@@ -100,15 +100,15 @@ static NSDictionary *methodTypeDict;
     [self.delegate lm_request:self didFinished:result];
     
     if (result.error == nil) {
-        [self _requestDidSuccess:result];
+        [self requestDidSuccess:result];
     } else {
-        [self _requestDidFail:result];
+        [self requestDidFail:result];
     }
     
     [self lm_didProcessResult:result];
 }
 
-- (void)_requestDidSuccess:(LMRequestResult *)result {
+- (void)requestDidSuccess:(LMRequestResult *)result {
     DLog(@"%@ %@ ==> success: %@", self.path, result.requestParams, self.responseData);
     if (self.isResponseJsonable) {
         if (result.responseDic) {
@@ -122,7 +122,7 @@ static NSDictionary *methodTypeDict;
     }
 }
 
-- (void)_requestDidFail:(LMRequestResult *)result {
+- (void)requestDidFail:(LMRequestResult *)result {
     DLog(@"%@ %@ ==> error: %@", self.path, result.requestParams, result.error);
     // 如果需要，显示错误对话框
     if (self.isShowErrorMessage) {
@@ -161,9 +161,7 @@ static NSDictionary *methodTypeDict;
     }
 }
 
-- (void)lm_didProcessResult:(LMRequestResult *)result {
-    
-}
+- (void)lm_didProcessResult:(LMRequestResult *)result {}
 
 - (BOOL)lm_willLoadWithParams:(NSDictionary *__autoreleasing *)params {
     BOOL canLoad = YES;
